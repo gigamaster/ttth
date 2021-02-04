@@ -1,201 +1,269 @@
 {
-    "name": "ttth",
+  "name": "ttth",
+  "productName": "ttth",
+  "desktopName": "ttth.desktop",
+  "version": "1.8.20210202",
+  "description": "ttth (talk to the hand) is an electron based desktop app for online services like WhatsApp, Threema, Telegram, Twitter, Google and several others.",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron .",
+    "start-verbose": "electron . verbose",
+    "start-debug": "electron . --enable-logging",
+    "clean": "rm -rf node_modules",
+    "clean-dist": "rimraf dist/*",
+    "clean-modules": "rimraf  'node_modules/!(rimraf|.bin)'",
+    "reinstall": "npm run clean && npm install",
+    "test": "mocha",
+    "lint": "node_modules/eslint/bin/eslint.js app/js --ignore-path=.eslintignore",
+    "standardx": "standardx --verbose | snazzy",
+    "standardx-fix": "standardx --fix --verbose | snazzy",
+    "standardx-all": "npm run standardx-js && npm run standardx-html ",
+    "standardx-all-fix": "npm run standardx-html-fix && npm run standardx-js-fix",
+    "standardx-js": "standardx --verbose",
+    "standardx-js-fix": "standardx --fix --verbose",
+    "standardx-html": "standardx --verbose --plugin html 'app/*.html'",
+    "standardx-html-fix": "standardx --verbose --plugin html 'app/*.html' --fix",
+    "jsdocs-delete": "rimraf docs/jsdocs/*",
+    "jsdocs-create": "./node_modules/jsdoc/jsdoc.js --configure jsdoc.json --readme README.md",
+    "jsdocs-update": "npm run jsdocs-delete && npm run jsdocs-create",
+    "pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=resources/installer/icon.icns --prune=true --out=dist",
+    "pack-win": "npm run pack-win-32 && npm run pack-win-64",
+    "pack-win-32": "electron-packager . ttth --overwrite --platform=win32 --arch=ia32 --icon=resources/installer/icon.ico --prune=true --out=dist --version-string.CompanyName=yafp --version-string.FileDescription=${productName} --version-string.ProductName=\"ttth\"",
+    "pack-win-64": "electron-packager . ttth --overwrite --platform=win32 --arch=x64 --icon=resources/installer/icon.ico --prune=true --out=dist --version-string.CompanyName=yafp --version-string.FileDescription=${productName} --version-string.ProductName=\"ttth\"",
+    "pack-linux": "npm run pack-linux-64",
+    "pack-linux-64": "electron-packager . ttth --overwrite --platform=linux --arch=x64 --icon=resources/installer/icons/1024x1024.png --prune=true --out=dist",
+    "build-mac": "electron-builder --mac --publish=onTagOrDraft",
+    "build-win": "electron-builder --win --ia32 --x64 --publish=onTagOrDraft",
+    "build-linux": "electron-builder --linux --publish=onTagOrDraft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yafp/ttth"
+  },
+  "bugs": {
+    "url": "https://github.com/yafp/ttth/issues"
+  },
+  "contributors": [
+    "Florian Poeck <fidel@yafp.de> (https://yafp.de)",
+    "4nd3r"
+  ],
+  "homepage": "https://github.com/yafp/ttth",
+  "keywords": [
+    "Electron",
+    "messenger",
+    "discord",
+    "dropbox",
+    "freenode",
+    "github",
+    "gitter",
+    "google calendar",
+    "google contacts",
+    "google drive",
+    "google duo",
+    "google keep",
+    "google mail",
+    "google messages",
+    "google photos",
+    "icq",
+    "linkedin",
+    "mattermost",
+    "messenger",
+    "microsoft teams",
+    "nextcloud",
+    "reddit chat",
+    "riot.im",
+    "slack",
+    "skype",
+    "steam",
+    "telegram",
+    "threema",
+    "twitter",
+    "wechat",
+    "whatsapp",
+    "wire",
+    "Xing"
+  ],
+  "author": "yafp <fidel@yafp.de>",
+  "license": "GPL-3.0",
+  "build": {
     "productName": "ttth",
-    "version": "1.6.0",
-    "description": "ttth (talk to the hand) is an electron based desktop app for online services like WhatsApp, Threema, Telegram, Twitter, Google and several others.",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron .",
-        "start-debug": "electron . --enable-logging",
-        "test": "mocha",
-        "lint": "node_modules/eslint/bin/eslint.js app/js --ignore-path=.eslintignore",
-        "pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=resources/installer/icon.icns --prune=true --out=dist",
-        "pack-win": "npm run pack-win-32 && npm run pack-win-64",
-        "pack-win-32": "electron-packager . ttth --overwrite --platform=win32 --arch=ia32 --icon=resources/installer/icon.ico --prune=true --out=dist --version-string.CompanyName=yafp --version-string.FileDescription=${productName} --version-string.ProductName=\"ttth\"",
-        "pack-win-64": "electron-packager . ttth --overwrite --platform=win32 --arch=x64 --icon=resources/installer/icon.ico --prune=true --out=dist --version-string.CompanyName=yafp --version-string.FileDescription=${productName} --version-string.ProductName=\"ttth\"",
-        "pack-linux": "npm run pack-linux-64",
-        "pack-linux-64": "electron-packager . ttth --overwrite --platform=linux --arch=x64 --icon=resources/installer/icons/1024x1024.png --prune=true --out=dist",
-        "build-mac": "electron-builder --mac",
-        "build-win": "electron-builder --win --ia32 --x64",
-        "build-win32": "electron-builder --win --ia32",
-        "build-win64": "electron-builder --win --x64",
-        "build-linux": "electron-builder --linux",
-        "build-linux64": "electron-builder --linux --x64"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/yafp/ttth"
-    },
-    "bugs": {
-        "url": "https://github.com/yafp/ttth/issues"
-    },
-    "contributors": [
-        "Florian Poeck <fidel@yafp.de> (https://yafp.de)",
-        "4nd3r"
+    "appId": "de.yafp.ttth",
+    "extraFiles": [
+      "LICENSE",
+      "docs/CHANGELOG.md",
+      "docs/FAQ.md",
+      "README.md"
     ],
-    "homepage": "https://github.com/yafp/ttth",
-    "keywords": [
-        "Electron",
-        "messenger",
-        "discord",
-        "dropbox",
-        "freenode",
-        "github",
-        "google calendar",
-        "google contacts",
-        "google keep",
-        "google mail",
-        "google messages",
-        "google photos",
-        "linkedin",
-        "mattermost",
-        "messenger",
-        "riot.im",
-        "slack",
-        "skype",
-        "telegram",
-        "threema",
-        "twitter",
-        "whatsapp",
-        "Xing"
-    ],
-    "author": "yafp <fidel@yafp.de>",
-    "license": "GPL-3.0",
-    "build": {
-        "productName": "ttth",
-        "appId": "de.yafp.ttth",
-        "extraFiles": [
-            "LICENSE",
-            "docs/CHANGELOG.md",
-            "docs/FAQ.md",
-            "README.md"
-        ],
-        "asar": true,
-        "mac": {
-            "category": "public.app-category.productivity",
-            "artifactName": "${productName}-${version}-mac.${ext}",
-            "target": [
-                "default"
-            ]
-        },
-        "dmg": {
-            "title": "ttth",
-            "background": "resources/installer/dmg_background.png",
-            "iconSize": 128,
-            "contents": [
-                {
-                    "x": 355,
-                    "y": 125,
-                    "type": "link",
-                    "path": "/Applications"
-                },
-                {
-                    "x": 155,
-                    "y": 125,
-                    "type": "file"
-                }
-            ]
-        },
-        "win": {
-            "icon": "resources/installer/icon.ico",
-            "publisherName": "yafp",
-            "artifactName": "${productName}-${version}-win-${arch}.${ext}",
-            "target": [
-                "zip",
-                "nsis",
-                "portable"
-            ]
-        },
-        "portable": {
-            "unicode": false,
-            "artifactName": "${productName}-${version}-win-portable-${arch}.${ext}"
-        },
-        "nsis": {
-            "unicode": false,
-            "artifactName": "${productName}-${version}-win-installer-${arch}.${ext}"
-        },
-        "linux": {
-            "executableName": "ttth",
-            "artifactName": "${productName}-${version}-linux-${arch}.${ext}",
-            "description": "ttth (talk to the hand) is an electron based desktop app for online services like WhatsApp, Threema, Telegram, Twitter, Google and several others.",
-            "category": "Network",
-            "desktop": {
-                "Terminal": "false",
-                "Type": "Application",
-                "Categories": "GTK;GNOME;Network;Email;Chat;InstantMessaging;"
-            },
-            "target": [
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "AppImage",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "deb",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "snap",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "pacman",
-                    "arch": [
-                        "x64"
-                    ]
-                },
-                {
-                    "target": "rpm",
-                    "arch": [
-                        "x64"
-                    ]
-                }
-            ]
-        },
-        "directories": {
-            "buildResources": "resources/installer/",
-            "output": "dist/"
-        },
-        "publish": [
-            {
-                "provider": "github",
-                "owner": "yafp",
-                "repo": "ttth",
-                "vPrefixedTagName": false
-            }
-        ]
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-mac.${ext}",
+      "target": [
+        "default"
+      ]
     },
-    "devDependencies": {
-        "chai": "^4.2.0",
-        "chai-as-promised": "^7.1.1",
-        "electron": "^5.0.10",
-        "electron-builder": "^21.2.0",
-        "electron-packager": "^14.0.6",
-        "eslint": "^6.5.1",
-        "mocha": "^6.2.1",
-        "spectron": "^8.0.0"
+    "dmg": {
+      "title": "ttth",
+      "background": "resources/installer/dmg_background.png",
+      "iconSize": 80,
+      "iconTextSize": 12,
+      "contents": [
+        {
+          "x": 300,
+          "y": 250,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 300,
+          "y": 25,
+          "type": "file"
+        }
+      ]
     },
-    "dependencies": {
-        "@sentry/electron": "^0.17.4",
-        "about-window": "^1.13.1",
-        "auto-launch": "^5.0.5",
-        "electron-is-dev": "^1.1.0",
-        "electron-json-storage": "^4.1.8",
-        "electron-log": "^3.0.8",
-        "electron-unhandled": "^3.0.0",
-        "i18next": "^17.0.17",
-        "i18next-sync-fs-backend": "^1.1.1",
-        "is-online": "^8.2.0"
-    }
+    "win": {
+      "icon": "resources/installer/icon.ico",
+      "publisherName": "yafp",
+      "artifactName": "${productName}-${version}-win-${arch}.${ext}",
+      "target": [
+        "zip",
+        "nsis",
+        "portable"
+      ]
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "${productName}-${version}-win-portable-${arch}.${ext}"
+    },
+    "nsis": {
+      "include": "resources/installer/nsis/installer.nsh",
+      "deleteAppDataOnUninstall": true,
+      "unicode": false,
+      "artifactName": "${productName}-${version}-win-installer-${arch}.${ext}",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "runAfterFinish": false,
+      "uninstallDisplayName": "${productName}-${version}"
+    },
+    "snap": {
+      "publish": [
+        {
+          "provider": "github"
+        }
+      ]
+    },
+    "linux": {
+      "executableName": "ttth",
+      "artifactName": "${productName}-${version}-linux-${arch}.${ext}",
+      "synopsis": "ttth is a desktop app for online services like WhatsApp and several others",
+      "description": "ttth (talk to the hand) is an electron based desktop app for online services like WhatsApp, Threema, Telegram, Twitter, Google and several others.",
+      "category": "Network",
+      "desktop": {
+        "Terminal": "false",
+        "Type": "Application",
+        "Categories": "GTK;GNOME;Network;Email;Chat;InstantMessaging;"
+      },
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "snap",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "pacman",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "freebsd",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "directories": {
+      "buildResources": "resources/installer/",
+      "output": "dist/"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "yafp",
+        "repo": "ttth",
+        "vPrefixedTagName": false
+      }
+    ]
+  },
+  "devDependencies": {
+    "docdash": "^1.2.0",
+    "electron": "^11.2.2",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.2.0",
+    "eslint": "^7.19.0",
+    "eslint-plugin-html": "^6.1.1",
+    "jsdoc": "^3.6.6",
+    "rimraf": "^3.0.2",
+    "snazzy": "^9.0.0",
+    "standardx": "^7.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@sentry/electron": "^2.2.0",
+    "about-window": "^1.13.4",
+    "animate.css": "^4.1.1",
+    "auto-launch": "^5.0.5",
+    "bootstrap": "^4.6.0",
+    "custom-electron-titlebar": "^3.2.6",
+    "electron-is-dev": "^1.2.0",
+    "electron-json-storage": "^4.3.0",
+    "electron-log": "^4.3.1",
+    "electron-unhandled": "^3.0.2",
+    "electron-util": "^0.14.2",
+    "i18next": "^19.8.7",
+    "i18next-sync-fs-backend": "^1.1.1",
+    "is-online": "^9.0.0",
+    "jquery": "^3.5.1",
+    "noty": "^3.2.0-beta",
+    "popper.js": "^1.16.1",
+    "v8-compile-cache": "^2.2.0",
+    "yargs": "^16.2.0"
+  },
+  "standardx": {
+    "globals": [],
+    "ignore": [
+      "/docs/jsdocs/scripts/prettify/*",
+      "/docs/jsdocs/*",
+      "test/spec.js"
+    ]
+  }
 }

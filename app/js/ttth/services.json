@@ -7,7 +7,8 @@
         "description": "All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.",
         "url": "https://discordapp.com/login",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/discord/discord_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "dropbox",
@@ -17,7 +18,8 @@
         "description": "Dropbox is a file hosting service operated by the American company Dropbox, Inc.",
         "url": "https://www.dropbox.com/h",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "freenode",
@@ -27,7 +29,8 @@
         "description": "WebIRC Service for Freenode",
         "url": "https://webchat.freenode.net/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "github",
@@ -37,7 +40,19 @@
         "description": "GitHub brings together the world's largest community of developers to discover, share, and build better software.",
         "url": "https://github.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "gitter",
+        "name": "Gitter",
+        "nameLong": "Gitter",
+        "icon": "fab fa-gitter",
+        "description": "Gitter is a chat and networking platform that helps to manage, grow and connect communities through messaging, content and discovery.",
+        "url": "https://gitter.im/",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/gitter/gitter_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "googleCalendar",
@@ -47,7 +62,8 @@
         "description": "Google calendar",
         "url": "https://calendar.google.com/calendar/r",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
     },
     {
         "id": "googleContacts",
@@ -57,7 +73,19 @@
         "description": "Organizing your Google contacts",
         "url": "https://contacts.google.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+    },
+    {
+        "id": "googleDuo",
+        "name": "Duo",
+        "nameLong": "Google Duo",
+        "icon": "fab fa-google",
+        "description": "Googles Duoa Chat",
+        "url": "https://duo.google.com/?web",
+        "multiple": false,
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
     },
     {
         "id": "googleDrive",
@@ -67,7 +95,8 @@
         "description": "Googles File hosting service",
         "url": "https://drive.google.com/drive/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
     },
     {
         "id": "googleKeep",
@@ -77,7 +106,8 @@
         "description": "Google notes solution",
         "url": "https://keep.google.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
     },
     {
         "id": "googleMail",
@@ -87,7 +117,8 @@
         "description": "Google mail",
         "url": "https://mail.google.com/mail/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/googleMail/googleMail_inject.js",
+        "userAgentDefault": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
     },
     {
         "id": "googleMessages",
@@ -97,7 +128,8 @@
         "description": "",
         "url": "https://messages.google.com/web",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/googleMessages/googleMessages_inject.js",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
     },
     {
         "id": "googlePhotos",
@@ -107,7 +139,19 @@
         "description": "Organizing your google photos",
         "url": "https://photos.google.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0"
+    },
+    {
+        "id": "icq",
+        "name": "ICQ",
+        "nameLong": "ICQ",
+        "icon": "fas fa-comments",
+        "description": "ICQ",
+        "url": "https://web.icq.com/",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/icq/icq_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "linkedIn",
@@ -117,7 +161,8 @@
         "description": "Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.",
         "url": "https://linkedin.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "mattermost",
@@ -127,7 +172,8 @@
         "description": "Mattermost is a flexible, open source messaging platform that meets even the most demanding privacy and security standards",
         "url": "https://example.com",
         "multiple": true,
-        "injectCode": "./js/ttth/services/Mattermost_inject.js"
+        "injectCode": "./js/ttth/services/mattermost/mattermost_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "messenger",
@@ -137,7 +183,41 @@
         "description": "",
         "url": "https://www.messenger.com/login/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/messenger/messenger_inject.js",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "microsoftOutlook",
+        "name": "Outlook",
+        "nameLong": "Microsoft Outlook",
+        "icon": "fab fa-microsoft",
+        "description": "",
+        "url": "https://outlook.live.com/mail/inbox",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/microsoftOutlook/microsoftOutlook_inject.js",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "microsoftOffice365",
+        "name": "Office365",
+        "nameLong": "Microsoft Office 365",
+        "icon": "fab fa-microsoft",
+        "description": "",
+        "url": "https://outlook.office.___/owa/",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/microsoftOffice365/microsoftOffice365_inject.js",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "microsoftTeams",
+        "name": "Teams",
+        "nameLong": "Microsoft Teams",
+        "icon": "fab fa-microsoft",
+        "description": "Microsoft Teams is the chat-based workspace in Office 365 that integrates all the people, content, and tools your team needs to be more engaged and effective.",
+        "url": "https://teams.microsoft.com",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/microsoftTeams/microsoftTeams_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "nextcloud",
@@ -147,7 +227,19 @@
         "description": "The self-hosted productivity platform that keeps you in control",
         "url": "https://example.com",
         "multiple": true,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "reddit",
+        "name": "Reddit",
+        "nameLong": "Reddit Chat",
+        "icon": "fab fa-reddit-alien",
+        "description": "Reddit Community chatrooms",
+        "url": "https://www.reddit.com/chat/",
+        "multiple": false,
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "riot",
@@ -157,7 +249,8 @@
         "description": "Riot.im is an open source, free software instant messaging client based on the Matrix protocol",
         "url": "https://riot.im/app/",
         "multiple": true,
-        "injectCode": "./js/ttth/services/Riot_inject.js"
+        "injectCode": "./js/ttth/services/riot/riot_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "skype",
@@ -167,7 +260,8 @@
         "description": "Keep your life easier with Skype online",
         "url": "https://web.skype.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/skype/skype_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "slack",
@@ -177,7 +271,19 @@
         "description": "Slack gives your team the power and alignment you need to do your best work.",
         "url": "https://YOURWORKSPACE.slack.com",
         "multiple": true,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/slack/slack_inject.js",
+        "userAgentDefault": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+    },
+    {
+        "id": "steam",
+        "name": "Steam",
+        "nameLong": "Steam Chat",
+        "icon": "fab fa-steam",
+        "description": "",
+        "url": "https://steamcommunity.com/chat",
+        "multiple": false,
+        "injectCode": "./js/ttth/services/steam/steam_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "telegram",
@@ -187,7 +293,8 @@
         "description": "Telegram is a messaging app with a focus on speed and security, it’s super-fast, simple and free.",
         "url": "https://web.telegram.org/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/telegram/telegram_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "threema",
@@ -197,7 +304,8 @@
         "description": "The messenger that puts security and privacy first.",
         "url": "https://web.threema.ch/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/threema/threema_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "twitter",
@@ -207,7 +315,19 @@
         "description": "From breaking news and entertainment to sports and politics, from big events to everyday interests.",
         "url": "https://mobile.twitter.com/",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/twitter/twitter_inject.js",
+        "userAgentDefault": ""
+    },
+    {
+        "id": "wechat",
+        "name": "wechat",
+        "nameLong": "WeChat",
+        "icon": "fab fa-weixin",
+        "description": "",
+        "url": "https://web.wechat.com/",
+        "multiple": false,
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "whatsapp",
@@ -217,7 +337,19 @@
         "description": "With WhatsApp, you'll get fast, simple, secure messaging and calling for free*, available on phones all over the world.",
         "url": "https://web.whatsapp.com/",
         "multiple": false,
-        "injectCode": "./js/ttth/services/WhatsApp_inject.js"
+        "injectCode": "./js/ttth/services/whatsapp/whatsapp_inject.js",
+        "userAgentDefault": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+    },
+    {
+        "id": "wire",
+        "name": "Wire",
+        "nameLong": "Wire",
+        "icon": "far fa-comment-dots",
+        "description": "",
+        "url": "https://app.wire.com/",
+        "multiple": false,
+        "injectCode": "",
+        "userAgentDefault": ""
     },
     {
         "id": "xing",
@@ -227,7 +359,8 @@
         "description": "Career-oriented social networking",
         "url": "https://www.xing.com/messages/conversations",
         "multiple": false,
-        "injectCode": ""
+        "injectCode": "./js/ttth/services/xing/xing_inject.js",
+        "userAgentDefault": ""
     },
     {
         "id": "custom",
@@ -237,6 +370,7 @@
         "description": "A random url",
         "url": "https://example.com",
         "multiple": true,
-        "injectCode": ""
+        "injectCode": "",
+        "userAgentDefault": ""
     }
 ]

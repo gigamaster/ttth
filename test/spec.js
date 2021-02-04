@@ -1,3 +1,12 @@
+//tests are currently disabled
+// to reenable the following dependencies need to be re-added
+//
+// DEvDependencies
+// - spectron
+// - mocha
+// - chai
+// - chai-as-promised
+
 console.log("Executing: test/spec.js");
 
 const Application = require("spectron").Application;
@@ -5,21 +14,17 @@ const assert = require("assert");
 const electronPath = require("electron"); // Require Electron from the binaries included in node_modules.
 const path = require("path");
 
-
 // Load chai assertions
 const chaiAsPromised = require("chai-as-promised");
 const chai = require("chai");
 chai.should();
 chai.use(chaiAsPromised);
 
-
 var expect = chai.expect;
-
 
 describe("Application Window", function ()
 {
     this.timeout(20000);
-
 
     after(function ()
     {
@@ -28,7 +33,6 @@ describe("Application Window", function ()
           return this.app.stop();
         }
     });
-
 
     beforeEach(function ()
     {
@@ -46,7 +50,6 @@ describe("Application Window", function ()
         return this.app.start();
     });
 
-
     afterEach(function ()
     {
         if (this.app && this.app.isRunning())
@@ -54,8 +57,6 @@ describe("Application Window", function ()
             return this.app.stop();
         }
     });
-
-
 
     // TEST: Check launching the app window
     //
@@ -69,7 +70,6 @@ describe("Application Window", function ()
     });
     */
 
-
     // TEST: Check the window title
     //
     /*
@@ -82,5 +82,4 @@ describe("Application Window", function ()
         });
     });
     */
-
 });

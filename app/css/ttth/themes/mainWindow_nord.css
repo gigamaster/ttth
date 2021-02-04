@@ -1,0 +1,50 @@
+:root {
+
+    /* 
+        Influenced:                             https://www.nordtheme.com/docs/colors-and-palettes
+        Color descriptions:                     https://www.colorhexa.com/;
+
+        FOREGROUND
+            Very dark grayish blue              #2e3440
+            Dark moderate blue                  #5e81ac
+            Very dark grayish blue.             #3b4252
+            Slightly desaturated green          #a3be8c
+            Slightly desaturated red            #BF616A
+
+        BACKGROUND:
+            Light grayish blue                  #eceff4
+            Light grayish blue                  #e5e9f0
+            Very dark grayish blue              #4c566a
+    */
+
+
+    /* body */
+    --color-bodyText: #2e3440;
+    --color-bodyHeading: #2e3440;
+    --color-bodyHeadingBorder: #5e81ac;
+    --color-bodyBackground: #eceff4;
+
+    /* navigation */
+    --color-navigationText: #e5e9f0;
+    --color-navigationBackground: #5e81ac;
+    --color-navigationBorder: #5e81ac;
+    --color-navigationHighlight: #e5e9f0;
+    --color-navigationCurrentActive: #5e81ac;
+
+    /* highlight */
+    --color-highlight: #5e81ac;
+
+    /* bootstrap form elements */
+    --color-inputFormsText: #3b4252;
+    --color-inputFormsBackground: #e5e9f0;
+    --color-inputFormsBorder: #4c566a;
+
+    /* bootstrap buttons */
+    --color-buttonSuccess: #A3BE8C;
+    --color-buttonDanger: #BF616A;
+    --color-buttonSecondary: #4C566A;
+    --color-buttonDark: #2E3440;
+
+    /* font awesome icons */
+    --color-fontAwesomeIcons: #3b4252;
+}
